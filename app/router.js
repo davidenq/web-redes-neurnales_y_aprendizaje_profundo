@@ -1,6 +1,5 @@
 'use strict';
-
-const server = require('./server');
+const server = require('../server');
 const controllers = server.settings.app.modules.controllers;
 
 server.route([{
