@@ -3,12 +3,9 @@
 const internals = {};
 
 internals.home = function(request, reply) {
-
-    const template = require('../resources/templates/index.marko');
-
-    template.render({
+    reply.marko('index', {
         name: 'Test'
-    }, reply);
+    });
 };
 
 exports = module.exports = internals;
