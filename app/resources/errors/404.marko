@@ -1,0 +1,24 @@
+<layout-use template="../templates/master.marko" show-header="$true">
+    <layout-put into="content">
+        <div id="main" >
+            <div class="book-content">
+                <div class="header">
+                    <div class="pure-u-1-2">
+                        <h2 class="book-content-title">404, Error</h2>
+                        <p class="book-content-subtitle">
+                        </p>
+                    </div>
+                    <div class="book-content-controls pure-u-1-2">
+                        <button class="pure-button pure-button-primary">Volver</button>
+                    </div>
+                </div>
+                <div class="content">
+                    <article class="font-article">
+                        <h3>$data.error</h3>
+                         <em>El recurso al que deseas acceder: no está disponible, o quizás se eliminó el contenido, o posiblemente se traslado a otra dirección</em>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </layout-put>
+</layout-use>

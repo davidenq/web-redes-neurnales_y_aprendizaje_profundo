@@ -1,9 +1,9 @@
 module.exports = {
     'server': {
         'uri': 'localhost',
-        'port': '8000'
+        'port': '3000'
     },
     'view': {
-        'path': '/app/resources/templates'
+        'path': '/app/resources'
     }
 };

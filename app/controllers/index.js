@@ -1,11 +1,16 @@
 'use strict';
+const path = require('path');
+const content = require('../markdown-book');
 
-const internals = {};
-
-internals.home = function(request, reply) {
-    reply.marko('index', {
-        name: 'Test'
-    });
+exports.index = function(request, reply) {
+    reply.marko('index', content.index);
 };
-
-exports = module.exports = internals;
+exports.about = function (request, reply){
+    reply.marko('index', content.about);
+};
+exports.exercises = function (request, reply){
+    reply.marko('index', content.exercises);
+};
+exports.chapter1 = function (request, reply){
+    reply.marko('index', content.chapter1);
+};

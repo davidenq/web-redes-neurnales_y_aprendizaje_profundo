@@ -1,22 +1,25 @@
 {
-    "name": "neural",
-    "version": "0.2.0",
-    "description": "Página web para publicar el libro sobre Redes Neuronales y Aprendizaje Profundo que es una traducción de la obra original Neural Network and Deep Learning escrita por Michael Nielsen",
-    "main": "server.js",
-    "scripts": {
-        "gulp": "gulp"
-    },
-    "keywords": [
-        "Redes Neuronales",
-        "Aprendaje Profundo",
-        "Hapijs"
-    ],
-    "author": "David Núñez <davip@live.com - http://www.davidenq.com>",
-    "license": "MIT",
-    "dependencies": {
-        "hapi": "^11.1.1",
-        "hoek": "^3.0.4",
-        "include-modules": "^0.2.2",
-        "marko": "^2.7.29"
-    }
+  "name": "neural",
+  "version": "0.2.0",
+  "description": "Página web para publicar el libro sobre Redes Neuronales y Aprendizaje Profundo que es una traducción de la obra original Neural Network and Deep Learning escrita por Michael Nielsen",
+  "main": "server.js",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "keywords": [
+    "Redes Neuronales",
+    "Aprendaje Profundo",
+    "Hapijs"
+  ],
+  "author": "David Núñez <davip@live.com - http://www.davidenq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^11.1.1",
+    "hoek": "^3.0.4",
+    "include-modules": "^0.2.2",
+    "inert": "^3.2.0",
+    "markdown": "^0.5.0",
+    "marked": "^0.3.5",
+    "upndown": "^2.0.2"
+  }
 }

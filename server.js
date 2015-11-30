@@ -3,6 +3,27 @@
 /* module dependences*/
 const Hapi = require('hapi');
 const Load = require('include-modules');
+const Inert = require('inert');
+var defaultOptions = require('marko/compiler').defaultOptions;
+defaultOptions = {
+    preserveWhitespace: {
+        'pre': true,
+        'textarea': true,
+        'script': true
+    },
+    allowSelfClosing: {},
+    startTagOnly: {
+        'img': true,
+        'br': true,
+        'input': true,
+        'meta': true,
+        'link': true,
+        'hr': true
+    },
+    checkUpToDate: true,
+    writeToDisk: true
+};
+
 
 const paths = {
     'controllers': '/app/controllers',
@@ -22,12 +43,22 @@ server.connection({
     port: process.env.OPENSHIFT_NODEJS_PORT || modules.config.app.server.port
 });
 
+const hapiMarko = require('hapi-marko');
+
+console.log(hapiMarko);
+
 server.register({
-    register: require('hapi-marko'),
+    register: hapiMarko,
     options: {
+        
+        hotReloading: {
+            enabled: true
+        },
         templatesDir: __dirname + modules.config.app.view.path
     }
-}, function() {});
+}, () => {});
+
+server.register(Inert, () => {});
 
 server.start(function() {
     console.log('Running at: http://' + server.info.uri + ':' + server.info.port);
@@ -35,4 +66,4 @@ server.start(function() {
 
 exports = module.exports = server;
 
-require('./app/router');
+require('./app/routes');
