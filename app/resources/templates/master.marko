@@ -18,12 +18,13 @@
         <link href='public/assets/css/404.css' rel='stylesheet' type='text/css'>
 		<link href='public/assets/css/content.css' rel='stylesheet' type='text/css'>
         <link href='public/assets/css/mathfonts.css' rel='stylesheet' type='text/css'>
+        <link href='public/assets/css/style.css' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <div id="layout">
             <aside>
                 <include template="../partials/aside.marko"/>
-            </aside>            
+            </aside>
             <section class="section">
                 <layout-placeholder name="content" />
             </section>
@@ -33,5 +34,12 @@
         </div>
         <script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
         <script src="/public/assets/js/ui.js"></script>
+        <script type="text/javascript">
+            var elements = document.getElementsByClassName('contentMDtoHTML');
+            var count = elements.length;
+            for(var i = 0; i <count; i++){
+                elements[i].innerHTML = elements[i].textContent;
+            }
+        </script>
     </body>
 </html>

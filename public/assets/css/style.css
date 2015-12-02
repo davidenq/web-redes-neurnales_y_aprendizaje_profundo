@@ -1,0 +1,83 @@
+.equation_link {
+    color: #2A6EA6;
+}
+
+.equation_link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.MathJax {
+    color: #2A2A2A;
+}
+
+/* Set the font size for Pygments */
+.highlight {
+    font-size: 9pt;
+}
+
+/* Set the font size for code */
+tt {
+    font-size: 12pt;
+    font-style: monospace;
+}
+
+
+/* d3 styling */
+path {
+    stroke: rgb(42, 110, 166);
+    stroke-width: 1;
+    fill: none;
+}
+.axis {
+    shape-rendering: crispEdges;
+}
+.axis text {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 11px;
+}
+.axis line, .axis path {
+    stroke: grey;
+}
+
+.axisLabel {
+  font-size: 18px;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+
+
+.MathJax_Display {
+    color: #333 !important;
+}
+
+
+
+/* Adapted from http://worrydream.com/ScrubbingCalculator/style.css, */
+/* by Bret Victor */
+.videoOverlay {
+    position: absolute;
+    cursor: pointer;
+    background-color: white;
+    z-index: 100;
+}
+
+.videoOverlay img {
+    position: absolute;
+    display: block;
+}
+
+/* class for text labels on the 3d graphs */
+.graph3D {
+    position: absolute;
+    font: 15px MJX_Math;
+    background-color: white;
+    border-radius: 5px;
+    line-height: 18px;
+    padding-top: 0;
+    padding-right: 3px;
+    padding-bottom: 0px;
+    padding-left: 3px;
+}
