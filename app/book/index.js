@@ -24,7 +24,11 @@ exports.exercises = {
 exports.chapter1 = {
     title: 'Capítulo 1',
     subtitle: 'Usando redes neuronales para reconocimiento de dígitos manuscritos',
-    contents: render('es/chapter_1.md'),
+    contents: {
+        part1:render('es/chapter1/part1.md'),
+        part2:render('es/chapter1/part2.md'),
+        part3:render('es/chapter1/part3.md')
+    },
     previewURL: '/about',
     nextURL: '/chapter2'
 };
