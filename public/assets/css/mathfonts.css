@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'lmrI';
+    src: url('/public/assets/fonts/latin-moder-roman/lmroman10-italic-webfont.eot');
+    src: url('/public/assets/fonts/latin-moder-roman/lmroman10-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/public/assets/fonts/latin-moder-roman/lmroman10-italic-webfont.woff') format('woff'),
+         url('/public/assets/fonts/latin-moder-roman/lmroman10-italic-webfont.ttf') format('truetype'),
+         url('/public/assets/fonts/latin-moder-roman/lmroman10-italic-webfont.svg#latin_modern_roman10_italic') format('svg');
+}
+@font-face {
+    font-family: 'lmrR';
+    src: url('/public/assets/fonts/latin-moder-roman/lmroman10-regular-webfont.eot');
+    src: url('/public/assets/fonts/latin-moder-roman/lmroman10-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/public/assets/fonts/latin-moder-roman/lmroman10-regular-webfont.woff') format('woff'),
+         url('/public/assets/fonts/latin-moder-roman/lmroman10-regular-webfont.ttf') format('truetype'),
+         url('/public/assets/fonts/latin-moder-roman/lmroman10-regular-webfont.svg#latin_modern_roman10_regular') format('svg');
+
+}
+math {
+    font-family: 'lmrR';
+    color: #222;
+}

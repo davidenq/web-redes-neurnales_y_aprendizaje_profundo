@@ -1,63 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset = "UTF-8" />
-	<title>Redes Neuronales y Aprendizaje Profundo</title>
-	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-	<meta content="" name="Libro gratuito acerca de las Redes Neuronales y Aprendizaje Profundo" />
-	<meta content="" name="David Núñez" />
-	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-	<!--[if lte IE 8]>
-	<link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
-	<![endif]-->
-	<!--[if gt IE 8]><!-->
-	<link href="public/assets/css/side-menu.css" rel="stylesheet">
-	<!--<![endif]-->
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-	<link href='public/assets/css/reset.css' rel='stylesheet' type='text/css'>
-	<link href='public/assets/css/style.css' rel='stylesheet' type='text/css'>
-	<link href='public/assets/css/social.css' rel='stylesheet' type='text/css'>
-	<style>
-		body{
-			font-family: 'Source Sans Pro', sans-serif;
-			font-size: 10pt;
-			color:#222;
-		}
-		/* Adapted from */
-        /* https://groups.google.com/d/msg/mathjax-users/jqQxrmeG48o/oAaivLgLN90J, */
-        /* by David Cervone */
-        @font-face {
-        font-family: 'MJX_Math';
-        src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/eot/MathJax_Math-Italic.eot');
-        /* IE9 Compat Modes */
-        src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/eot/MathJax_Math-Italic.eot?iefix') format('eot'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf') format('opentype'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/svg/MathJax_Math-Italic.svg#MathJax_Math-Italic') format('svg');
-        }
-        @font-face {
-        font-family: 'MJX_Main';
-        src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/eot/MathJax_Main-Regular.eot');
-        /* IE9 Compat Modes */
-        src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/eot/MathJax_Main-Regular.eot?iefix') format('eot'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf') format('opentype'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/svg/MathJax_Main-Regular.svg#MathJax_Main-Regular') format('svg');
-        }
-	</style>
-</head>
-<body>
-	<div id="layout">
-		<a href="#menu" id="menuLink" class="menu-link">
-			<!-- Hamburger icon -->
-			<span></span>
-		</a>
-		<aside id="menu">
-			<include template="../partials/aside.marko"/>
-		</aside>
-		<section>
-			<layout-placeholder name="content" />
-		</section>
-	</div>
-	<script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
-	<script src="/public/assets/js/ui.js"></script>
-	<script type="text/x-mathjax-config">
-        MathJax.Hub.Config({ tex2jax: {inlineMath: [['@','@']]}, "HTML-CSS": {scale: 92}, TeX: { equationNumbers: { autoNumber: "AMS" }}});
-    </script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+    <head>
+        <meta charset = "UTF-8" />
+        <title>Redes Neuronales y Aprendizaje Profundo</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="" name="Libro gratuito acerca de las Redes Neuronales y Aprendizaje Profundo" />
+        <meta content="" name="David Núñez" />
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+        <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+        <link href="public/assets/css/side-menu.css" rel="stylesheet">
+        <!--<![endif]-->
+        <link href='public/assets/css/style.css' rel='stylesheet' type='text/css'>
+        <link href='public/assets/css/social.css' rel='stylesheet' type='text/css'>
+        <link href='public/assets/css/404.css' rel='stylesheet' type='text/css'>
+		<link href='public/assets/css/content.css' rel='stylesheet' type='text/css'>
+        <link href='public/assets/css/mathfonts.css' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div id="layout">
+            <aside>
+                <include template="../partials/aside.marko"/>
+            </aside>            
+            <section class="section">
+                <layout-placeholder name="content" />
+            </section>
+			<footer class="footer">
+                <include template="../partials/footer.marko"/>
+			</footer>
+        </div>
+        <script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
+        <script src="/public/assets/js/ui.js"></script>
+    </body>
 </html>

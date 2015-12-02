@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Tinos);
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 11pt;
+    color: #333;
+    font-weight: 300
+}
+h1,
+h2 {
+    font-family: 'Tinos', serif;
+    font-weight: 300;
+}
+.section {
+    position: relative;
+    background: #FFF;
+    z-index: 5;
+    padding-bottom: 1px;
+    margin-bottom: 300px;
+}
+.section a {
+    color: #1177C8;
+}
+.section a:hover {
+    text-decoration: underline;
+}
+.footer {
+    position: fixed;
+    z-index: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    left: 300px;
+    background: #F2F2F2;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .25);
+}
+.ccbync {
+    padding-top: 15px;
+    padding-left: 10%;
+    width: 80%;
+    font-size: 8pt;
+    color: #666;
+    text-align: center;
+    font-family: arial;
+}
+@media (max-width: 48em) {
+    .footer {
+        position: fixed;
+        z-index: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        left: 0px;
+        background: #FFF;
+        box-shadow: 0 0 12px rgba(0, 0, 0, .25);
+    }
+}
+.color-link-footer {
+    color: #1177C8;
+}
+a:hover {
+    text-decoration: underline;
+}

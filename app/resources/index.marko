@@ -1,31 +1,19 @@
 <layout-use template="./templates/master.marko" show-header="$true">
     <layout-put into="content">
-        <div id="main" >
-            <div class="book-content">
-                <div class="header">
-                    <div class="pure-u-1-2">
-                        <h1 class="book-content-title">$data.title</h1>
-                    </div>
-                    <div class="book-content-controls pure-u-1-2">
-                        <a href="$data.nextURL">Siguiente</a>
-                    </div>
-                </div>
-                <div class="content">
-                    <article class="font-article">
-                        <div id="contentMDtoHTML">$data.contents</div>
-                    </article>
-                </div>
+        <div id="main">
+            <div class="header">
+                <h1 class="book-content-title">${data.title}</h1>
+                <h2>${data.subtitle}</h2>
+            </div>
+            <div class="content">
+                <article class="font-articled">
+                    <div id="contentMDtoHTML">$data.contents</div>
+                </article>
             </div>
         </div>
-        <script src="/public/assets/js/markdownit.js"></script>
         <script type="text/javascript">
-            var content = document.getElementById('contentMDtoHTML').innerHTML;
-            var md = new markdownit({
-                html: true,
-                breaks:true
-            });
-            var result = md.render(content);
-            document.getElementById('contentMDtoHTML').innerHTML = result;
+            var content = document.getElementById('contentMDtoHTML').textContent;
+            document.getElementById('contentMDtoHTML').innerHTML = content;
         </script>
     </layout-put>
 </layout-use>

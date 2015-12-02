@@ -1,15 +1,7 @@
-body {
-    color: #000;
-}
-
 .pure-img-responsive {
     max-width: 100%;
-    height: auto;
+    height: auto
 }
-
-/*
-Add transition to containers so they can push in and out.
-*/
 #layout,
 #menu,
 .menu-link {
@@ -17,255 +9,371 @@ Add transition to containers so they can push in and out.
     -moz-transition: all 0.2s ease-out;
     -ms-transition: all 0.2s ease-out;
     -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out
 }
-
-/*
-This is the parent `<div>` that contains the menu and the content area.
-*/
 #layout {
     position: relative;
-    padding-left: 0;
+    padding-left: 0
 }
-    #layout.active #menu {
-        left: 300px;
-        width: 300px;
-    }
-
-    #layout.active .menu-link {
-        left: 300px;
-    }
-/*
-The content `<div>` is where all your content goes.
-*/
+#layout.active #menu {
+    left: 300px;
+    width: 300px
+}
+#layout.active .menu-link {
+    left: 300px
+}
 .content {
     margin: 0 auto;
     padding: 0 2em;
     max-width: 800px;
     margin-bottom: 50px;
-    line-height: 1.6em;
-    text-align: justify;
+    line-height: 1.5em;
+    text-align: justify
 }
-
 .header {
-     margin: 0;
-     color: #333;
-     text-align: center;
-     padding: 2.5em 2em 0;
-     border-bottom: 1px solid #ccc;
- }
-    .header h1 {
-        margin: 0.2em 0;
-        font-size: 3em;
-        font-weight: 300;
-    }
-     .header h2 {
-        font-weight: 300;
-        color: #000;
-        padding: 0;
-        margin-top: 0;
-    }
-
+    margin: 0;
+    text-align: center;
+    padding: 2.5em 2em 0;
+    border-bottom: 1px solid #ccc
+}
+.header h1 {
+    margin: 0.2em 0;
+    font-size: 1.8em;
+    color: #444
+}
+.header h2 {
+    font-weight: 300;
+    color: #333;
+    padding: 0;
+    margin-top: 0
+}
 .content-subhead {
     margin: 50px 0 20px 0;
     font-weight: 300;
-    color: #888;
+    color: #888
 }
-
-
-
-/*
-The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
-appears on the left side of the page.
-*/
-
 #menu {
-    margin-left: -300px; /* "#menu" width */
+    margin-left: -300px;
     width: 300px;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #0E3142;
+    z-index: 1000;
+    background: #2F3D4A;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch
 }
-    /*
-    All anchors inside the menu should be styled like this.
-    */
-    #menu a {
-        border: none;
-    }
-
-    /*
-    Remove all background/borders, since we are applying them to #menu.
-    */
-     #menu .pure-menu,
-     #menu .pure-menu ul {
-        border: none;
-        background: transparent;
-        list-style: none;
-        padding: 0;
-    }
-
-    /*
-    Add that light border to separate items into groups.
-    */
-        /*
-        Change color of the anchor links on hover/focus.
-        */
-        #menu .pure-menu li a:hover,
-        #menu .pure-menu li a:focus {
-            background: #333;
-        }
-
-    /*
-    This styles the selected menu item `<li>`.
-    */
-    #menu .pure-menu-selected,
-    #menu .pure-menu-heading {
-        background: #172C3E;
-    }
-        /*
-        This styles a link within a selected menu item `<li>`.
-        */
-        #menu .pure-menu-selected a {
-            color: #fff;
-        }
-
-    /*
-    This styles the menu heading.
-    */
-    #menu .pure-menu-heading {
-        font-size: 110%;
-        color: #fff;
-        margin: 0;
-    }
-
-/* -- Dynamic Button For Responsive Menu -------------------------------------*/
-
-/*
-The button to open/close the Menu is custom-made and not part of Pure. Here's
-how it works:
-*/
-
-/*
-`.menu-link` represents the responsive menu toggle that shows/hides on
-small screens.
-*/
+#menu a {
+    border: none
+}
+#menu a:hover {
+    color: #FFF;
+    opacity: 1;
+    -webkit-transition: color 0.3s ease-in-out;
+    -moz-transition: color 0.3s ease-in-out;
+    -ms-transition: color 0.3s ease-in-out;
+    -o-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out
+}
+#menu .pure-menu,
+#menu .pure-menu ul {
+    border: none;
+    list-style: none;
+    padding: 0
+}
+Change color of the anchor links on hover/focus. */ #menu .pure-menu li a:hover,
+#menu .pure-menu li a:focus {
+    background: #2C3845;
+    text-decoration: none;
+    transition: background-color 0.5s ease 0s
+}
+#menu .pure-menu-selected,
+#menu .pure-menu-heading {
+    background: #172C3E
+}
+#menu .pure-menu-selected a {
+    color: #fff
+}
+#menu .pure-menu-heading {
+    font-size: 110%;
+    color: #fff;
+    margin: 0
+}
 .menu-link {
     position: fixed;
-    display: block; /* show this only on small screens */
+    display: block;
     top: 0;
-    left: 0; /* "#menu width" */
+    left: 0;
     background: #000;
-    background: rgba(0,0,0,0.7);
-    font-size: 10px; /* change this value to increase/decrease button size */
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 10px;
     z-index: 10;
     width: 2em;
     height: auto;
-    padding: 2.1em 1.6em;
+    padding: 2.1em 1.6em
 }
-
-    .menu-link:hover,
-    .menu-link:focus {
-        background: #000;
-    }
-
-    .menu-link span {
-        position: relative;
-        display: block;
-    }
-
-    .menu-link span,
-    .menu-link span:before,
-    .menu-link span:after {
-        background-color: #fff;
-        width: 100%;
-        height: 0.2em;
-    }
-
-        .menu-link span:before,
-        .menu-link span:after {
-            position: absolute;
-            margin-top: -0.6em;
-            content: " ";
-        }
-
-        .menu-link span:after {
-            margin-top: 0.6em;
-        }
-
-
-/* -- Responsive Styles (Media Queries) ------------------------------------- */
-
-/*
-Hides the menu at `48em`, but modify this based on your app's needs.
-*/
+.menu-link:hover,
+.menu-link:focus {
+    background: #000
+}
+.menu-link span {
+    position: relative;
+    display: block
+}
+.menu-link span,
+.menu-link span:before,
+.menu-link span:after {
+    background-color: #fff;
+    width: 100%;
+    height: 0.2em
+}
+.menu-link span:before,
+.menu-link span:after {
+    position: absolute;
+    margin-top: -0.6em;
+    content: " "
+}
+.menu-link span:after {
+    margin-top: 0.6em
+}
 @media (min-width: 48em) {
-
     .header,
     .content {
         padding-left: 2em;
-        padding-right: 2em;
+        padding-right: 2em
     }
-
     #layout {
-        padding-left: 300px; /* left col width "#menu" */
-        left: 0;
+        padding-left: 300px;
+        left: 0
     }
     #menu {
-        left: 300px;
+        left: 300px
     }
-
     .menu-link {
         position: fixed;
         left: 300px;
-        display: none;
+        display: none
     }
-
     #layout.active .menu-link {
-        left: 300px;
+        left: 300px
     }
 }
-
 @media (max-width: 48em) {
-    /* Only apply this when the window is small. Otherwise, the following
-    case results in extra padding on the left:
-        * Make the window small.
-        * Tap the menu to trigger the active state.
-        * Make the window large again.
-    */
     #layout.active {
         position: relative;
-        left: 300px;
+        left: 300px
     }
 }
-#about-book{
-color: #FFF;
-font-size:9pt;
-text-align: justify;
-margin: 15px;
-bottom: 0px;
-margin-bottom: 10px;
-position: relative;
+#about-book {
+    color: #FFF;
+    font-size: 9pt;
+    text-align: justify;
+    margin: 15px;
+    bottom: 0px;
+    margin-bottom: 10px;
+    position: relative
 }
-a, u {
+a,
+u {
     text-decoration: none;
-    color: #5686d7;
+    color: #333
 }
-#resources{
-color: #FFF;
-font-size:9pt;
-width: 100%;
-text-align:center;
-text-align: justify;
-margin: 15px 15px 10px 0px;
-bottom: 100px;
-margin-bottom: 10px;
-position: relative;
+#resources {
+    color: #FFF;
+    font-size: 9pt;
+    width: 100%;
+    text-align: center;
+    text-align: justify;
+    margin: 15px 15px 10px 0px;
+    bottom: 100px;
+    margin-bottom: 10px;
+    position: relative
 }
-#menu-aside{
-position: relative
+#menu-aside {
+    position: relative
+}
+.color-link {
+    color: #D58F15
+}
+.backg:hover {
+    background: #2C3845;
+    transition: background-color 0.5s ease 0s;
+    color: #FFF
+}
+.cd-accordion-menu {
+    max-width: 600px
+}
+.cd-accordion-menu ul {
+    display: none
+}
+.cd-accordion-menu li {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+.cd-accordion-menu input[type=checkbox] {
+    position: absolute;
+    opacity: 0
+}
+.cd-accordion-menu label,
+.cd-accordion-menu a {
+    position: relative;
+    display: block;
+    padding: 10px 10px 10px 25px;
+    color: #ADB3B8;
+    font-size: 0.9rem
+}
+.no-touch .cd-accordion-menu label:hover,
+.no-touch .cd-accordion-menu a:hover {
+    color: #FFF
+}
+.cd-accordion-menu label::before,
+.cd-accordion-menu label::after,
+.cd-accordion-menu a::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+.cd-accordion-menu label {
+    cursor: pointer
+}
+.cd-accordion-menu label::before,
+.cd-accordion-menu label::after {
+    background-image: url(../img/flecha.svg);
+    background-repeat: no-repeat
+}
+.cd-accordion-menu label::before {
+    left: 18px;
+    background-position: 0 0;
+    -webkit-transform: translateY(-50%) rotate(-90deg);
+    -moz-transform: translateY(-50%) rotate(-90deg);
+    -ms-transform: translateY(-50%) rotate(-90deg);
+    -o-transform: translateY(-50%) rotate(-90deg);
+    transform: translateY(-50%) rotate(-90deg)
+}
+.cd-accordion-menu label::after {
+    background-position: 16px 0
+}
+.cd-accordion-menu input[type=checkbox]:checked + label::before {
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+.cd-accordion-menu input[type=checkbox]:checked + label::after {
+    background-position: -64px 0
+}
+.cd-accordion-menu input[type=checkbox]:checked + label + ul,
+.cd-accordion-menu input[type=checkbox]:checked + label:nth-of-type(n) + ul {
+    display: block;
+    transition: background-color 0.5s ease 0s;
+    background: #2C3845;
+    color: #FFF
+}
+.cd-accordion-menu ul label,
+.cd-accordion-menu ul a {
+    padding-left: 10px
+}
+.no-touch .cd-accordion-menu ul label:hover,
+.no-touch .cd-accordion-menu ul a:hover {
+    background: #3c3f45;
+    color: #FFF
+}
+.cd-accordion-menu > li:last-of-type > label,
+.cd-accordion-menu > li:last-of-type > a,
+.cd-accordion-menu > li > ul > li:last-of-type label,
+.cd-accordion-menu > li > ul > li:last-of-type a {
+    box-shadow: none
+}
+.cd-accordion-menu ul label::before {
+    left: 36px
+}
+.cd-accordion-menu ul label::after,
+.cd-accordion-menu ul a::after {
+    left: 59px
+}
+.cd-accordion-menu ul ul label,
+.cd-accordion-menu ul ul a {
+    padding-left: 100px
+}
+.cd-accordion-menu ul ul label::before {
+    left: 54px
+}
+.cd-accordion-menu ul ul label::after,
+.cd-accordion-menu ul ul a::after {
+    left: 77px
+}
+.cd-accordion-menu ul ul ul label,
+.cd-accordion-menu ul ul ul a {
+    padding-left: 118px
+}
+.cd-accordion-menu ul ul ul label::before {
+    left: 72px
+}
+.cd-accordion-menu ul ul ul label::after,
+.cd-accordion-menu ul ul ul a::after {
+    left: 95px
+}
+@media only screen and (min-width: 600px) {
+    .cd-accordion-menu label,
+    .cd-accordion-menu a {
+        padding: 10px 10px 10px 25px;
+        font-size: 0.85rem;
+        color: #ADB3B8
+    }
+    .cd-accordion-menu label::before {
+        left: 0px
+    }
+    .cd-accordion-menu label::after {
+        left: 53px
+    }
+    .cd-accordion-menu ul label,
+    .cd-accordion-menu ul a {
+        padding-left: 40px
+    }
+    .cd-accordion-menu ul label::before {
+        left: 48px
+    }
+    .cd-accordion-menu ul label::after,
+    .cd-accordion-menu ul a::after {
+        left: 77px
+    }
+    .cd-accordion-menu ul ul label,
+    .cd-accordion-menu ul ul a {
+        padding-left: 80px
+    }
+    .cd-accordion-menu ul ul label::before {
+        left: 72px
+    }
+    .cd-accordion-menu ul ul label::after,
+    .cd-accordion-menu ul ul a::after {
+        left: 101px
+    }
+    .cd-accordion-menu ul ul ul label,
+    .cd-accordion-menu ul ul ul a {
+        padding-left: 154px
+    }
+    .cd-accordion-menu ul ul ul label::before {
+        left: 96px
+    }
+    .cd-accordion-menu ul ul ul label::after,
+    .cd-accordion-menu ul ul ul a::after {
+        left: 125px
+    }
+}
+.cd-accordion-menu.animated label::before {
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s
 }

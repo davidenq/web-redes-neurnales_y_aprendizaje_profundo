@@ -4,26 +4,8 @@
 const Hapi = require('hapi');
 const Load = require('include-modules');
 const Inert = require('inert');
-var defaultOptions = require('marko/compiler').defaultOptions;
-defaultOptions = {
-    preserveWhitespace: {
-        'pre': true,
-        'textarea': true,
-        'script': true
-    },
-    allowSelfClosing: {},
-    startTagOnly: {
-        'img': true,
-        'br': true,
-        'input': true,
-        'meta': true,
-        'link': true,
-        'hr': true
-    },
-    checkUpToDate: true,
-    writeToDisk: true
-};
-
+require('marko/node-require').install();
+require('marko/compiler').defaultOptions.writeToDisk = false;
 
 const paths = {
     'controllers': '/app/controllers',
@@ -34,7 +16,8 @@ let modules = Load.modules(paths, __dirname);
 
 const server = new Hapi.Server({
     app: {
-        modules: modules
+        modules: modules,
+        path: __dirname
     }
 });
 
@@ -42,21 +25,6 @@ server.connection({
     uri: process.env.OPENSHIFT_NODEJS_IP || modules.config.app.server.uri,
     port: process.env.OPENSHIFT_NODEJS_PORT || modules.config.app.server.port
 });
-
-const hapiMarko = require('hapi-marko');
-
-console.log(hapiMarko);
-
-server.register({
-    register: hapiMarko,
-    options: {
-        
-        hotReloading: {
-            enabled: true
-        },
-        templatesDir: __dirname + modules.config.app.view.path
-    }
-}, () => {});
 
 server.register(Inert, () => {});
 
