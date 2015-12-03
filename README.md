@@ -1,6 +1,9 @@
+Aun se están realizando algunas mejoras sobre el sistema web y sobre la documentación. Muy pronto estará disponible la página web para este libro "Redes Neuronales y Aprendizaje Profundo" en el enlace web [http://redesneuronalesyaprendizajeprofundo.com](http://redesneuronalesyaprendizajeprofundo.com).
+
+
 ## Redes Neuronales y Aprendizaje Profundo.
 
-Este libro te ayudará a conocer y entender los conceptos clave acerca de las redes neuronales y el aprendizaje profundo.
+Este libro, una obra derivada y en proceso de traducción de la obra original [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/) escrita por [Michael Nielsen](http://michaelnielsen.org/), te ayudará a conocer y entender los conceptos clave acerca de las redes neuronales y el aprendizaje profundo.
 
 ## Preguntas-Sugerencias
 
