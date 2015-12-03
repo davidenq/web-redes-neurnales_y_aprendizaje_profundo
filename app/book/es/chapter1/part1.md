@@ -31,12 +31,12 @@ Estarémos enfocados en el reconocimiento de escritura a mano puesto que es un e
 Por supuesto, si el punto principal del capítulo fue sólo escribir un programa de ordenador para realizar el reconocimiento de dígitos escritos a mano, entonces el capítulo sería mucho más corto. Pero esto no es así puesto que en el transcurso de este libro desarrollaremos muchas ideas importantes sobre las redes neuronales, incluyendo dos importantes tipos de neurona artificial (el perceptrón y la neurona sigmoide) y el algoritmo estándar de aprendizaje de redes neuronales conocido como descenso de gradiente estocástico. Además, me centraré en explicar _por qué_ se hacen las cosas de esa manera y en la construcción y percepción de una red neuronal. Todo esto requiere una larga discusión a diferencia de si solo se presentara la mecánica básica de lo que está haciendo, pero vale la pena porque tendrás una compresión mucho más profunda. Al finalizar el capítulo estaremos en una posición tal que nos permitirá entender que es el aprendizaje profundo y por qué es tan importante.
 
 
-## <a name="perceptrons"></a>[Percentrones](chap1.html#perceptrons)
+## <a name="perceptrons"></a>[Percentrones](#perceptrons)
 
 
 ¿Qué es una red neuronal? Para empezar, explicaré un tipo de neurona artificial llamada _percentron_. El perceptron fue [desarrollado](http://books.google.ca/books/about/Principles_of_neurodynamics.html?id=7FhRAAAAMAAJ) entre los años 1950 y 1960 por el científico [Frank Rosenblatt](http://en.wikipedia.org/wiki/Frank_Rosenblatt), quién fue inspirado por el [trabajo](http://scholar.google.ca/scholar?cluster=4035975255085082870) realizado por [Warren McCulloch](https://es.wikipedia.org/wiki/Warren_McCulloch) y [Walter Pitts](http://en.wikipedia.org/wiki/Walter_Pitts), y que trata acerca de las teorías del cerebro y la neurona como la unidad más básica del cerebro. Hoy en día, es más comun usar otro modelo de neurona artificial - en este libro, y en otros muchos y modernos trabajos sobre redes neuronales, el principal modelo de neurona usada es llamada _neurona sigmoide_. Irémos en breve a tocar el tema de las Neuronas Sigmoide. Pero para entender porque son definidas de esa manera, vale la pena tomarse el tiempo necesario y entender primero el percentron.
 
-Así que ¿Cómo trabaja un percetron? Un percetrón tiene algunas entradas binarias, @x_1, x_2,cdots,@ y produce una única salida binaria:
+Así que ¿Cómo trabaja un percetron? Un percetrón tiene algunas entradas binarias, @x_1, x_2,...,@ y produce una única salida binaria:
 
 <center>
 
@@ -44,7 +44,7 @@ Así que ¿Cómo trabaja un percetron? Un percetrón tiene algunas entradas bina
 
 </center>
 
-En el ejemplo se muestra un percentron con 3 entradas @x_1, x_2, x_3@ En general, esto podría tener menos o más entradas. Rosenblatt introdujo los llamados _pesos_, @w_1,w_2, w_3,cdots,@ que no son más que valores numéricos asociados a cada una de sus correspondientes entradas, además estos pesos expresan la importancia de cada valor de entrada. A la salida de la neurona se tiene uno de dos posibles valores, @0@ o @1@. Este valor queda determinado por el resultado de la suma ponderada entre el producto de los pesos y los parámetros de entrada. Matemáticamente queda expresado como: @sum_j w_j x_j@ Es decir, si este resultado es menor o mayor que un cierto _valor umbral_, entonces se tendrá a la salida o @0@ o @1@. Rosenblatt lo propuso como regla simple para calcular la salida. Para definirlo en términos matemáticos más precisos se tiene que:
+En el ejemplo se muestra un percentron con 3 entradas @x_1, x_2, x_3@ En general, esto podría tener menos o más entradas. Rosenblatt introdujo los llamados _pesos_, @w_1,w_2, w_3,...,@ que no son más que valores numéricos asociados a cada una de sus correspondientes entradas, además estos pesos expresan la importancia de cada valor de entrada. A la salida de la neurona se tiene uno de dos posibles valores, @0@ o @1@. Este valor queda determinado por el resultado de la suma ponderada entre el producto de los pesos y los parámetros de entrada. Matemáticamente queda expresado como: @sum_j w_j x_j@ Es decir, si este resultado es menor o mayor que un cierto _valor umbral_, entonces se tendrá a la salida o @0@ o @1@. Rosenblatt lo propuso como regla simple para calcular la salida. Para definirlo en términos matemáticos más precisos se tiene que:
 
 % `salida` = { 0 if sum_j w_jx_j ≤ `umbral` ; 1 if sum_j w_jx_j > `umbral`%
 
@@ -95,7 +95,7 @@ Then we see that input @00@ produces output @1@, since @(-2)*0+(-2)*0+3 = 3@ is 
 
 <a name="universality"></a>
 
-The `NAND` example shows that we can use perceptrons to compute simple logical functions. In fact, we can use networks of perceptrons to compute _any_ logical function at all. The reason is that the `NAND` gate is universal for computation, that is, we can build any computation up out of `NAND` gates. For example, we can use `NAND` gates to build a circuit which adds two bits, @x_1@ and @x_2@. This requires computing the bitwise sum, @x_1 \oplus x_2@, as well as a carry bit which is set to @1@ when both @x_1@ and @x_2@ are @1@, i.e., the carry bit is just the bitwise product @x_1 x_2@:
+The `NAND` example shows that we can use perceptrons to compute simple logical functions. In fact, we can use networks of perceptrons to compute _any_ logical function at all. The reason is that the `NAND` gate is universal for computation, that is, we can build any computation up out of `NAND` gates. For example, we can use `NAND` gates to build a circuit which adds two bits, @x_1@ and @x_2@. This requires computing the bitwise sum, @x_1 o+ x_2@, as well as a carry bit which is set to @1@ when both @x_1@ and @x_2@ are @1@, i.e., the carry bit is just the bitwise product @x_1 x_2@:
 
 <center>
 
@@ -135,7 +135,7 @@ This notation for input perceptrons, in which we have an output, but no inputs,
 
 </center>
 
-is a shorthand. It doesn't actually mean a perceptron with no inputs. To see this, suppose we did have a perceptron with no inputs. Then the weighted sum @\sum_j w_j x_j@ would always be zero, and so the perceptron would output @1@ if @b > 0@, and @0@ if @b \leq 0@. That is, the perceptron would simply output a fixed value, not the desired value (@x_1@, in the example above). It's better to think of the input perceptrons as not really being perceptrons at all, but rather special units which are simply defined to output the desired values, @x_1, x_2,\ldots@.
+is a shorthand. It doesn't actually mean a perceptron with no inputs. To see this, suppose we did have a perceptron with no inputs. Then the weighted sum @sum_j w_j x_j@ would always be zero, and so the perceptron would output @1@ if @b > 0@, and @0@ if @b <= 0@. That is, the perceptron would simply output a fixed value, not the desired value (@x_1@, in the example above). It's better to think of the input perceptrons as not really being perceptrons at all, but rather special units which are simply defined to output the desired values, @x_1, x_2,...@.
 
 The adder example demonstrates how a network of perceptrons can be used to simulate a circuit containing many `NAND` gates. And because `NAND` gates are universal for computation, it follows that perceptrons are also universal for computation.
 
@@ -143,7 +143,7 @@ The computational universality of perceptrons is simultaneously reassuring and d
 
 However, the situation is better than this view suggests. It turns out that we can devise _learning algorithms_ which can automatically tune the weights and biases of a network of artificial neurons. This tuning happens in response to external stimuli, without direct intervention by a programmer. These learning algorithms enable us to use artificial neurons in a way which is radically different to conventional logic gates. Instead of explicitly laying out a circuit of `NAND` and other gates, our neural networks can simply learn to solve problems, sometimes problems where it would be extremely difficult to directly design a conventional circuit.
 
-### <a name="sigmoid_neurons"></a>[Neuronas Sigmoid](chap1.html#sigmoid_neurons)
+### <a name="sigmoid_neurons"></a>[Neuronas Sigmoide](#sigmoid_neurons)
 
 Learning algorithms sound terrific. But how can we devise such algorithms for a neural network? Suppose we have a network of perceptrons that we'd like to use to learn to solve some problem. For example, the inputs to the network might be the raw pixel data from a scanned, handwritten image of a digit. And we'd like the network to learn weights and biases so that the output from the network correctly classifies the digit. To see how learning might work, suppose we make a small change in some weight (or bias) in the network. What we'd like is for this small change in weight to cause only a small corresponding change in the output from the network. As we'll see in a moment, this property will make learning possible. Schematically, here's what we want (obviously this network is too simple to do handwriting recognition!):
 
@@ -167,10 +167,22 @@ Okay, let me describe the sigmoid neuron. We'll depict Neuronas Sigmoid in the s
 
 </center>
 
-Just like a perceptron, the sigmoid neuron has inputs, @x_1, x_2, \ldots@. But instead of being just @0@ or @1@, these inputs can also take on any values _between_ @0@ and @1@. So, for instance, @0.638\ldots@ is a valid input for a sigmoid neuron. Also just like a perceptron, the sigmoid neuron has weights for each input, @w_1, w_2, \ldots@, and an overall bias, @b@. But the output is not @0@ or @1@. Instead, it's @\sigma(w \cdot x+b)@, where @\sigma@ is called the _sigmoid function_* <span class="marginnote">*Incidentally, @\sigma@ is sometimes called the _logistic function_, and this new class of neurons called _logistic neurons_. It's useful to remember this terminology, since these terms are used by many people working with neural nets. However, we'll stick with the sigmoid terminology.</span>, and is defined by: <a class="displaced_anchor" name="eqtn3"></a>\begin{eqnarray} \sigma(z) \equiv \frac{1}{1+e^{-z}}. \tag{3}\end{eqnarray} To put it all a little more explicitly, the output of a sigmoid neuron with inputs @x_1,x_2,\ldots@, weights @w_1,w_2,\ldots@, and bias @b@ is <a class="displaced_anchor" name="eqtn4"></a>\begin{eqnarray} \frac{1}{1+\exp(-\sum_j w_j x_j-b)}. \tag{4}\end{eqnarray}
+Just like a perceptron, the sigmoid neuron has inputs, @x_1, x_2, ...,@. But instead of being just @0@ or @1@, these inputs can also take on any values _between_ @0@ and @1@. So, for instance, @0.638...@ is a valid input for a sigmoid neuron. Also just like a perceptron, the sigmoid neuron has weights for each input, @w_1, w_2, ...@, and an overall bias, @b@. But the output is not @0@ or @1@. Instead, it's @sigma(w * x+b)@, where @sigma@ is called the _sigmoid function_* <span class="marginnote">*Incidentally, @sigma@ is sometimes called the _logistic function_, and this new class of neurons called _logistic neurons_. It's useful to remember this terminology, since these terms are used by many people working with neural nets. However, we'll stick with the sigmoid terminology.</span>, and is defined by:
+
+<a class="displaced_anchor" name="eqtn3"></a>
+
+%sigma(z) == 1/{1+e^{-z}}        (3)%
+
+
+To put it all a little more explicitly, the output of a sigmoid neuron with inputs @x_1,x_2,...@, weights @w_1,w_2,...@, and bias @b@ is
+
+<a class="displaced_anchor" name="eqtn4"></a>
+
+%1/{1+exp(-sum_j w_jx_j -b)}        (4)%
+
 
 At first sight, Neuronas Sigmoid appear very different to perceptrons. The algebraic form of the sigmoid function may seem opaque and forbidding if you're not already familiar with it. In fact, there are many similarities between perceptrons and Neuronas Sigmoid, and the algebraic form of the sigmoid function turns out to be more of a technical detail than a true barrier to understanding.
 
-To understand the similarity to the perceptron model, suppose @z \equiv w \cdot x + b@ is a large positive number. Then @e^{-z} \approx 0@ and so @\sigma(z) \approx 1@. In other words, when @z = w \cdot x+b@ is large and positive, the output from the sigmoid neuron is approximately @1@, just as it would have been for a perceptron. Suppose on the other hand that @z = w \cdot x+b@ is very negative. Then @e^{-z} \rightarrow \infty@, and @\sigma(z) \approx 0@. So when @z = w \cdot x +b@ is very negative, the behaviour of a sigmoid neuron also closely approximates a perceptron. It's only when @w \cdot x+b@ is of modest size that there's much deviation from the perceptron model.
+To understand the similarity to the perceptron model, suppose @z == w * x + b@ is a large positive number. Then @e^{-z} ≈ 0 @ and so @sigma(z) ≈ 1@. In other words, when @z = w * x+b@ is large and positive, the output from the sigmoid neuron is approximately @1@, just as it would have been for a perceptron. Suppose on the other hand that @z = w * x+b@ is very negative. Then @e^{-z} rarr oo@, and @sigma(z) ≈ 0@. So when @z = w * x +b@ is very negative, the behaviour of a sigmoid neuron also closely approximates a perceptron. It's only when @w * x+b@ is of modest size that there's much deviation from the perceptron model.
 
-What about the algebraic form of @\sigma@? How can we understand that? In fact, the exact form of @\sigma@ isn't so important - what really matters is the shape of the function when plotted. Here's the shape:
+What about the algebraic form of @sigma@? How can we understand that? In fact, the exact form of @sigma@ isn't so important - what really matters is the shape of the function when plotted. Here's the shape:
