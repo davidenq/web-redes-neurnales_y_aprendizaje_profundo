@@ -4,7 +4,13 @@ const Fs = require('fs');
 const Path = require('path');
 
 exports.index = {
-    title: 'Prefacio',
+    title: 'Información',
+    contents: render('../../README.md'),
+    previewURL: '/',
+    nextURL: '/index'
+};
+exports.introduction = {
+    title: 'Redes Neuronales y Aprendizaje Profundo',
     contents: render('es/index.md'),
     previewURL: '/',
     nextURL: '/about'

@@ -10,6 +10,10 @@ server.route([{
     handler: controllers.index
 }, {
     method: 'GET',
+    path: '/introduction',
+    handler: controllers.introduction
+},{
+    method: 'GET',
     path: '/about',
     handler: controllers.about
 }, {

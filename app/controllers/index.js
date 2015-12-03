@@ -7,6 +7,9 @@ const chapter1 = require('../resources/chapter1.marko');
 exports.index = function(request, reply) {
     index.render(content.index, reply);
 };
+exports.introduction = function(request, reply) {
+    index.render(content.introduction, reply);
+};
 exports.about = function(request, reply) {
     index.render(content.about, reply);
 };
