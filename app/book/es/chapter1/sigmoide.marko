@@ -1,0 +1,74 @@
+<div id="sigmoid_graph">
+    <a name="sigmoid_graph"></a>
+</div>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+    function s(x) {
+        return 1 / (1 + Math.exp(-x));
+    }
+    var m = [40, 120, 50, 120];
+    var height = 290 - m[0] - m[2];
+    var width = 600 - m[1] - m[3];
+    var xmin = -5;
+    var xmax = 5;
+    var sample = 400;
+    var x1 = d3.scale.linear()
+        .domain([0, sample])
+        .range([xmin, xmax]);
+    var data = d3.range(sample)
+        .map(function (d) {
+            return {
+                x: x1(d),
+                y: s(x1(d))
+            };
+        });
+    var x = d3.scale.linear()
+        .domain([xmin, xmax])
+        .range([0, width]);
+    var y = d3.scale.linear()
+        .domain([0, 1])
+        .range([height, 0]);
+    var line = d3.svg.line()
+        .x(function (d) {
+            return x(d.x);
+        })
+        .y(function (d) {
+            return y(d.y);
+        })
+    var graph = d3.select("#sigmoid_graph")
+        .append("svg")
+        .attr("width", width + m[1] + m[3])
+        .attr("height", height + m[0] + m[2])
+        .append("g")
+        .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .tickValues(d3.range(-4, 5, 1))
+        .orient("bottom")
+    graph.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0, " + height + ")")
+        .call(xAxis);
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .tickValues(d3.range(0, 1.01, 0.2))
+        .orient("left")
+        .ticks(5)
+    graph.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+    graph.append("path")
+        .attr("d", line(data));
+    graph.append("text")
+        .attr("class", "x label")
+        .attr("text-anchor", "end")
+        .attr("x", width / 2)
+        .attr("y", height + 35)
+        .text("z");
+    graph.append("text")
+        .attr("x", (width / 2))
+        .attr("y", -10)
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px")
+        .text("sigmoid function");
+</script>

@@ -13,7 +13,8 @@
     },
     "watch":[
         "app",
-        "server.js"
+        "server.js",
+        "README.md"
     ],
     "env":{
         "NODE_ENV":"development"

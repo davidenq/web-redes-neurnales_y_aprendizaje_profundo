@@ -6,4 +6,4 @@ Este libro te enseñará acerca de:
 
 Las redes neuronales y el aprendizaje profundo en la actualidad proveen la mejor solución a varios problemas como reconocimiento de imagen, reconocimiento de voz y procesamiento natural de lenguaje. Este libro te enseñará muchos de los conceptos clave detrás de las redes neuronales y el aprendizaje profundo.
 
-Para mayor información acerca del enfoque que ha tomado este libro puedes ver [aquí](about.html) O si prefieres continuar con el aprehendizaje ve al [Capítulo 1](chapter1).
+Para mayor información acerca del enfoque que ha tomado este libro puedes ver [aquí](about) O si prefieres continuar con el aprehendizaje ve al [Capítulo 1](chapter-1).
