@@ -46,6 +46,6 @@ server.ext('onPreResponse', function(request, reply) {
         return reply.continue();
     }
     template.render({
-        'error': '¡Ups! Recurso no encontrado'
+        'error': '¡Ups! Lo siento, aun no está disponible este recurso.'
     }, reply);
 });
