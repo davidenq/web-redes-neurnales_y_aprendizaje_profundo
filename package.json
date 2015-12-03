@@ -1,6 +1,6 @@
 {
     "name":"neural",
-    "version":"0.4.0",
+    "version":"0.4.1",
     "description":"Página web para publicar el libro sobre Redes Neuronales y Aprendizaje Profundo que es una traducción de la obra original Neural Network and Deep Learning escrita por Michael Nielsen",
     "main":"server.js",
     "scripts":{
