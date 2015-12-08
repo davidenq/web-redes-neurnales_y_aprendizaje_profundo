@@ -96,6 +96,7 @@ Si has seguido las instrucciones antes mencionadas de como contribuir con el pro
 [![Hapijs](public/assets/images/hapi.png)](http://hapijs.com/)
 [![Markojs](public/assets/images/marko.png)](http://markojs.com/)
 [![Markdown](public/assets/images/markdown.png)]()
+[![Purecss](public/assets/images/purecss.png)](purecss.io)
 
 </center>
 <center>
