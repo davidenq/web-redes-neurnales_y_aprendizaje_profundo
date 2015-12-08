@@ -1,6 +1,5 @@
 'use strict';
-
-const content = require('../book');
+const content = require('../../book');
 const index = require('../resources/index.marko');
 const chapter1 = require('../resources/chapter1.marko');
 

@@ -39,7 +39,7 @@
 .header h1 {
     margin: 0.2em 0;
     font-size: 1.8em;
-    color: #444
+    color: #000
 }
 .header h2 {
     font-weight: 300;
@@ -223,7 +223,8 @@ u {
     display: block;
     padding: 10px 10px 10px 25px;
     color: #ADB3B8;
-    font-size: 0.9rem
+    font-size: 0.9rem;
+    font-family:'Source Sans Pro', sans-serif;
 }
 .no-touch .cd-accordion-menu label:hover,
 .no-touch .cd-accordion-menu a:hover {
@@ -330,7 +331,8 @@ u {
     .cd-accordion-menu a {
         padding: 10px 10px 10px 25px;
         font-size: 0.85rem;
-        color: #ADB3B8
+        color: #ADB3B8;
+        font-family:'Source Sans Pro', sans-serif;
     }
     .cd-accordion-menu label::before {
         left: 0px

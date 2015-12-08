@@ -5,7 +5,7 @@ const Path = require('path');
 
 exports.index = {
     title: 'Información',
-    contents: render('../../README.md'),
+    contents: render('../README.md'),
     previewURL: '/',
     nextURL: '/index'
 };
